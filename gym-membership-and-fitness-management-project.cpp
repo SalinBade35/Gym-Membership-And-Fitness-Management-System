@@ -994,7 +994,7 @@ void user_record()
 	{
 	int m;
 	cout<<"\n*******************************\n";
-	cout<<"1.Quit gym\n2.Edit your profile\n3.Fitness recommendations\n4.Display record\n5.Logout\n";
+	cout<<"1.Quit gym\n2.Edit your profile\n3.Fitness Suggestions \n4.Display record\n5.Logout\n";
 	cout<<"\n*******************************\n";
 	cout<<endl<<"Enter your choice"<<endl;
 	cin>>m;
