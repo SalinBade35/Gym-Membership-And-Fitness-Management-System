@@ -108,8 +108,31 @@ class member
     	char mem_name[50], classs[50],timings[50];
     	char password[50];
     	float fee;
-    	char contact[11];    	
+    	char contact[11];  
+
     	public:
+
+		void calculate_bmi()
+    {
+        double weight_kg, height_m;
+        cout << "Enter weight (in kilograms): ";
+        cin >> weight_kg;
+        cout << "Enter height (in meters): ";
+        cin >> height_m;
+
+        // Calculate BMI
+        double bmi = weight_kg / (height_m * height_m);
+
+        cout << "BMI: " << bmi << endl;
+        if (bmi < 18.5)
+            cout << "Underweight" << endl;
+        else if (bmi >= 18.5 && bmi < 24.9)
+            cout << "Normal weight" << endl;
+        else if (bmi >= 25 && bmi < 29.9)
+            cout << "Overweight" << endl;
+        else
+            cout << "Obese" << endl;
+    }
     int get_member_number()
     {	return(member_number);
 	}
@@ -994,7 +1017,7 @@ void user_record()
 	{
 	int m;
 	cout<<"\n*******************************\n";
-	cout<<"1.Quit gym\n2.Edit your profile\n3.Fitness Suggestions \n4.Display record\n5.Logout\n";
+	cout<<"1.Quit gym\n2.Edit your profile\n3.Fitness Suggestions \n4.Display record\n5.Check BMI\n6.Logout\n";
 	cout<<"\n*******************************\n";
 	cout<<endl<<"Enter your choice"<<endl;
 	cin>>m;
@@ -1018,7 +1041,9 @@ void user_record()
     				s1.display_record();
     				system("cls"); 
     				break;
-    		case 5:return;
+    		case 5: m1.calculate_bmi();
+    				break;
+    		case 6:return;
 	}
 }
 }
